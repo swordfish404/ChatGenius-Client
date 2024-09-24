@@ -19,7 +19,7 @@ const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash", safetySettin
 
 const prompt = "Write a story about a magic backpack.";
 
-const result = await model.generateContent(prompt);
-console.log(result.response.text());
+// const result = await model.generateContent(prompt);
+// console.log(result.response.text());
 
 export default model;
