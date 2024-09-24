@@ -39,7 +39,7 @@ const NewPrompt = ({ data }) => {
     mutationFn: () => {
       return fetch(`${import.meta.env.VITE_API_URL}/api/chats/${data._id}`, {
         method: "PUT",
-        credentials: "include",
+        credentials:true,
         headers: {
           "Content-Type": "application/json",
         },
@@ -93,6 +93,8 @@ const NewPrompt = ({ data }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("Env value",import.meta.env.VITE_API_URL);
+    console.log("Hi")
 
     const text = e.target.text.value;
     if (!text) return;

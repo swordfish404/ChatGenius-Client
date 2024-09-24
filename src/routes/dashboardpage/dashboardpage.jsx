@@ -14,10 +14,11 @@ const Dashboard = () => {
 
   // Using react-query for the mutation
   const mutation = useMutation({
-    mutationFn: (text) => {
+    mutationFn: async(text) => {
+      
       return fetch(`${import.meta.env.VITE_API_URL}/api/chats`, {
         method: "POST",
-        credentials: "include",
+        credentials:true,
         headers: {
           "Content-Type": "application/json"
         },
@@ -32,6 +33,8 @@ const Dashboard = () => {
   });
 
   const handleSubmit = async (e) => {
+    console.log("Env value",import.meta.env.VITE_API_URL);
+    console.log("Hi")
     e.preventDefault(); // Prevents the page from reloading
     const text = e.target.text.value;
     if (!text) return;
