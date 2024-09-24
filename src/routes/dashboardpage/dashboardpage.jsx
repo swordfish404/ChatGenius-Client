@@ -18,7 +18,7 @@ const Dashboard = () => {
       
       return fetch(`${import.meta.env.VITE_API_URL}/api/chats`, {
         method: "POST",
-        
+        credentials:'same-origin',
         headers: {
           "Content-Type": "application/json"
         },
